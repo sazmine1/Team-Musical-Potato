@@ -1,7 +1,18 @@
 public class Card {
     public String suit,number;
-    public Card(String suit1, String number1){
-	suit=suit1;
+    public Card(int suit1, String number1){
+	if (suit1==0){
+	    suit="h";
+	}
+	if (suit1==1){
+	    suit="d";
+	}
+	if (suit1==2){
+	    suit="s";
+	}
+	if (suit1==3){
+	    suit="c";
+	}
 	number=number1;
     }
     public String toString(){
@@ -15,7 +26,7 @@ public class Card {
 	return retStr;
     }
     public static void main(String[] args){
-	Card King = new Card("h","K");
+	Card King = new Card(1,"K");
 	System.out.println(King);
     }
 }
