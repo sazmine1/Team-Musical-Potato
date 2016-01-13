@@ -4,3 +4,5 @@ DEVLOG
 Created Card and Blackjack classes. Finished Card class. Made constructor for Blackjack class. Solidifying ideas.
 
 1/12/16
+Completed Blackjack class. Mapped out embellishments and potential concerns. Thinking about learning rules and implementing betting system for poker.
+
