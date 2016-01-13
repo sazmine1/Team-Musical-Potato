@@ -3,10 +3,12 @@ import java.util.ArrayList;
 public class Blackjack {
     private ArrayList<Card> deck;
     private final String CARDS="234567891JQKA";
+    public Player user;
 
     public Blackjack() {
 	deck=deck();
 	shuffle();
+	user=new Player("Bob");
     }
     public ArrayList deck(){
 	ArrayList ret= new ArrayList<Card>();
@@ -28,6 +30,10 @@ public class Blackjack {
 	    ret+=deck.get(x).get()+" ";
 	}
 	return ret;
+    }
+    public void deal(){
+	user.add(
+    public void playTurn(){
     }
     public static void main(String[] args){
 	Blackjack bo = new Blackjack();
