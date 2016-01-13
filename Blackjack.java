@@ -23,7 +23,11 @@ public class Blackjack {
 	}
     }
     public String toString(){
-	return deck.toString();
+        String ret="";
+	for(int x=0;x<deck.size();x++){
+	    ret+=deck.get(x).get()+" ";
+	}
+	return ret;
     }
     public static void main(String[] args){
 	Blackjack bo = new Blackjack();

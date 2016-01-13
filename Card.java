@@ -25,6 +25,9 @@ public class Card {
 	retStr+="\n|"+suit+"    "+suit+"|";
 	return retStr;
     }
+    public String get(){
+	return suit+number;
+    }
     public static void main(String[] args){
 	Card King = new Card(1,"K");
 	System.out.println(King);
