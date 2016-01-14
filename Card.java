@@ -13,9 +13,14 @@ public class Card {
 	if (suit1==3){
 	    suit="c";
 	}
-	number=number1;
+	if (number1.equals("1")){
+	    number=number1+"0";
+	}
+	else{
+	    number=number1;
+	}
     }
-    public String toString(){
+    public String get(){
 	String retStr="--------\n|"+number+"    "+number+"|";
 	retStr+="\n|"+suit+"    "+suit+"|";
 	for(int x=0;x<3;x++){
@@ -25,7 +30,7 @@ public class Card {
 	retStr+="\n|"+suit+"    "+suit+"|";
 	return retStr;
     }
-    public String get(){
+    public String toString(){
 	return suit+number;
     }
     public static void main(String[] args){
