@@ -1,0 +1,9 @@
+To Do List
+1. Work out class hierarchy's minor kinks and details
+2. Work in Scanner class and terminal readings
+3. Properly figure out method for one turn of each game in relation to the rules
+
+Have done list
+1. Established relationships between most of the classes
+2. Searched up rules for games we want to do
+3. 
