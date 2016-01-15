@@ -4,10 +4,12 @@ DEVLOG
 Created Card and Blackjack classes. Finished Card class. Made constructor for Blackjack class. Solidifying ideas.
 
 1/12/16
-Completed Blackjack class skeleton. Mapped out embellishments and potential concerns. Thinking about learning rules and implementing betting system for poker.
+Completed Blackjack class skeleton. Mapped out embellishments and potential concerns. Thinking about learning rules and implementing
+betting system for poker.
 
 1/13/16
 Added to skeleton for Blackjack class. Decided on using a recursive method. Moved method addUp from Blackjack to Player.
 
 1/14/16
-Established relationships between Casino, Player, and Card. Decided layout for cards. Figured out how to implement functionality in each interconnected class. Working on implementing Keyboard.java into the Blackjack class. Started on the beginnings of the betting system.
+Established relationships between Casino, Player, and Card. Decided layout for cards. Figured out how to implement functionality in each
+interconnected class. Working on implementing Keyboard.java into the Blackjack class. Started on the beginnings of the betting system.
