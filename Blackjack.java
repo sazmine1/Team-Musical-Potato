@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import Keyboard.java;
 
 public class Blackjack extends Casino{
     public Blackjack() {
@@ -27,9 +28,31 @@ public class Blackjack extends Casino{
     }
     public void playTurn(){
 	if (turn(user)){
-	    System.out.println("Hit or Stay?");
-	    boolean choice;
-	}	    
+	    while(1==2){
+		System.out.println("Hit or Stay?");
+		String choice=Keyboard.readString();
+		if (choice.equals("h")){
+		    hit(user);
+		    break;
+		}
+		else if (choice.equals("s")){
+		    user.setStay(true);
+		    break;
+		}
+	    }
+	}
+	if (turn(comp1)){
+	    while(comp1.nums()<16){
+		hit(comp1);
+	    }
+	    comp1.setStay(true);
+	}
+	if (turn(comp1)){
+	    while(comp1.nums()<16){
+		hit(comp1);
+	    }
+	    comp1.setStay(true);
+	}
     }
     public static void main(String[] args){
 	Blackjack bo = new Blackjack();

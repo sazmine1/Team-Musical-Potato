@@ -23,11 +23,25 @@ public class Player{
     public int nums(){
 	int ret=0;
 	for(int x=0;x<hand.size();x++){
-	    ret+=Integer.parseInt(hand.get(x).number);
+	    try{
+		ret+=Integer.parseInt(hand.get(x).number);
+	    }
+	    catch(Exception E){
+		String num = hand.get(x).number;
+		if (num.equals("J")||num.equals("Q")||num.equals("K")){
+		    ret+=10;
+		}
+		else{
+		    ret+=11;
+		}
+	    }
 	}
 	return ret;
     }
     public boolean getStay(){
 	return stay;
+    }
+    public void setStay(boolean s){
+	stay=s;
     }
 }
