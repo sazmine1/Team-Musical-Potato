@@ -17,10 +17,13 @@ public class Player{
 	hand.add(a);
 	hand.add(b);
     }
+    public void add(Card a){
+	hand.add(a);
+    }
     public int nums(){
 	int ret=0;
-	for(int x=0;x<hand.length;x++){
-	    ret+=parseInt(hand.get(x).number);
+	for(int x=0;x<hand.size();x++){
+	    ret+=Integer.parseInt(hand.get(x).number);
 	}
 	return ret;
     }
