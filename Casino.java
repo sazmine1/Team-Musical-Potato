@@ -8,12 +8,14 @@ public class Casino{
     public Player comp1;
     public Player comp2;
     public int place;
+    public int pot;
     public Casino(){
 	deck=deck();
 	shuffle();
 	user=new Player("Bob");
 	comp1=new Player("Mo");
 	comp2=new Player("Mike");
+	pot = 0;
     }
     public ArrayList deck(){
 	ArrayList ret= new ArrayList<Card>();
