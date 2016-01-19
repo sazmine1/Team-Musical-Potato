@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import Keyboard.java;
+import cs1.Keyboard;
 
 public class Blackjack extends Casino{
     public Blackjack() {
@@ -28,10 +28,13 @@ public class Blackjack extends Casino{
     }
     public void playTurn(){
 	if (turn(user)){
-	    while(1==2){
-		System.out.println("Hit or Stay?");
+	    while(!(user.getStay())){
+		System.out.println(user);
+		System.out.println("Hit or Stay(h or s)?");
 		String choice=Keyboard.readString();
 		if (choice.equals("h")){
+		    System.out.println(place);
+		    System.out.println(deck.get(place));
 		    hit(user);
 		    break;
 		}
@@ -47,18 +50,49 @@ public class Blackjack extends Casino{
 	    }
 	    comp1.setStay(true);
 	}
-	if (turn(comp1)){
-	    while(comp1.nums()<16){
+	if (turn(comp2)){
+	    while(comp2.nums()<17){
 		hit(comp1);
 	    }
 	    comp1.setStay(true);
 	}
+	int a=user.nums();
+	int b=comp1.nums();
+	int c=comp2.nums();
+	System.out.println(user+" Total:"+a);
+	System.out.println(comp1+" Total:"+b);
+        System.out.println(comp2+ "Total:"+ c);
+	if(a==b&&b==c&&a<22){
+	    System.out.println("Tie! You get the pot!");
+	}
+	if(a<22&&a>b&&a>c){
+	    System.out.println("You win");
+	}
+	else if(b<22&&b>c&&b>a){
+	    System.out.println(comp1.name+" wins!");
+	}
+	else if(c<22&&c>b&&c>a){
+	    System.out.println(comp2.name+" wins!");
+	}
+	else{
+	    System.out.println("You all busted");
+	    if(a<b&&a<c){
+		System.out.println("You are closest to 21 so you win");
+	    }
+	    else if(b<a&&b<c){
+		System.out.println(comp1.name+" is closest to 21 so he wins");
+	    }
+	    else{
+		System.out.println(comp2.name+" is closest to 21 so he wins");
+	    }
+	}
     }
     public static void main(String[] args){
 	Blackjack bo = new Blackjack();
-	System.out.println(bo);
-	System.out.println(bo.user);
-	System.out.println(bo.comp1);
-	System.out.println(bo.comp2);
+	//System.out.println(bo);
+	//System.out.println(bo.user);
+	//System.out.println(bo.comp1);
+	//System.out.println(bo.comp2);
+	bo.playTurn();
     }
 }

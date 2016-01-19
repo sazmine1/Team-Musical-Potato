@@ -1,3 +1,5 @@
+
+package cs1;
 import java.io.*;
 import java.util.*;
 
