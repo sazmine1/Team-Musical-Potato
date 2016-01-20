@@ -26,6 +26,24 @@ public class Blackjack extends Casino{
     public boolean turn(Player o){
 	return (!(o.nums()>21||user.getStay()));
     }
+    public int max(int[] a){
+	int ret=0;
+	for(int x=0;x<a.length();x++){
+	    if(a[x]>ret){
+		ret=a[x];
+	    }
+	}
+	return ret;
+    }
+    public int min(int[] a){
+	int ret=0;
+	for(int x=0;x<a.length();x++){
+	    if(a[x]<ret&&a[x]!=0){
+		ret=a[x];
+	    }
+	}
+	return ret;
+    }
     public void play(){
 	if (turn(user)){
 	    while(!(user.getStay())){
@@ -54,7 +72,7 @@ public class Blackjack extends Casino{
 	    while(comp2.nums()<17){
 		hit(comp2);
 	    }
-	    comp1.setStay(true);
+	    comp2.setStay(true);
 	}
 	int a=user.nums();
 	int b=comp1.nums();
@@ -62,11 +80,51 @@ public class Blackjack extends Casino{
 	System.out.println(user+" Total:"+a);
 	System.out.println(comp1+" Total:"+b);
         System.out.println(comp2+ "Total:"+ c);
-	if(a==b&&b==c&&a<22){
-	    System.out.println("Tie! You get the pot!");
+	int[] stuff = new int[3];
+	int[] things = new int[3];
+	if(a<22){
+	    stuff[0]=a;
 	}
-	if(a<22&&a>b&&a>c){
+	else{
+	    things[0]=a;
+	}
+	if(b<22){
+	    stuff[1]=b;
+	}
+	else{
+	    things[1]=b;
+	}
+	if(c<22){
+	    suff[2]=c;
+	}
+	else{
+	    things[3]=c;
+	}
+	int winner;
+	if(max(stuff)>0){
+	    winner=stuff.indexOf(max(stuff));
+	}
+	else{
+	    winner=things.indexOf(min(stuff));
+	}
+	if(winner==0){
 	    System.out.println("You win");
+	}
+	else if(winner==1){
+	    System.out.println(comp1.name+" wins!");
+	}
+	else if(winner==2){
+	    System.out.println(comp2.name+" wins!");
+	}
+	/*
+	if(a==b&&b==c&&a<22){
+	    System.out.println("Tie! You win!");
+	}
+	if(a<22){
+	    if(b>21&&c>21){
+		System.out.println("You win");
+	    }
+	    else if(
 	}
 	else if(b<22&&b>c&&b>a){
 	    System.out.println(comp1.name+" wins!");
@@ -86,6 +144,7 @@ public class Blackjack extends Casino{
 		System.out.println(comp2.name+" is closest to 21 so he wins");
 	    }
 	}
+	*/
     }
 
 
