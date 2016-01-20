@@ -26,7 +26,7 @@ public class Blackjack extends Casino{
     public boolean turn(Player o){
 	return (!(o.nums()>21||user.getStay()));
     }
-    public void playTurn(){
+    public void play(){
 	if (turn(user)){
 	    while(!(user.getStay())){
 		System.out.println(user);
@@ -88,14 +88,6 @@ public class Blackjack extends Casino{
 	}
     }
 
-    public void play() {
-	int a=user.nums();
-	int b=comp1.nums();
-	int c=comp2.nums();
-	while((a <= 21) && (b <= 21) && (c <= 21)) {
-	    playTurn();
-	}
-    }
 
     public static void main(String[] args){
 	Blackjack bo = new Blackjack();
