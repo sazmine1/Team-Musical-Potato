@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7587f7ff87b2e9510e19487a341d6c5fd1d8bb84
 package cs1;
 import java.io.*;
 import java.util.*;
