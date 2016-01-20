@@ -52,7 +52,7 @@ public class Blackjack extends Casino{
 	}
 	if (turn(comp2)){
 	    while(comp2.nums()<17){
-		hit(comp1);
+		hit(comp2);
 	    }
 	    comp1.setStay(true);
 	}
@@ -74,7 +74,7 @@ public class Blackjack extends Casino{
 	else if(c<22&&c>b&&c>a){
 	    System.out.println(comp2.name+" wins!");
 	}
-	else{
+	else if(a>22&&b>22&&c>22) {
 	    System.out.println("You all busted");
 	    if(a<b&&a<c){
 		System.out.println("You are closest to 21 so you win");
@@ -87,12 +87,22 @@ public class Blackjack extends Casino{
 	    }
 	}
     }
+
+    public void play() {
+	int a=user.nums();
+	int b=comp1.nums();
+	int c=comp2.nums();
+	while((a <= 21) && (b <= 21) && (c <= 21)) {
+	    playTurn();
+	}
+    }
+
     public static void main(String[] args){
 	Blackjack bo = new Blackjack();
 	//System.out.println(bo);
 	//System.out.println(bo.user);
 	//System.out.println(bo.comp1);
 	//System.out.println(bo.comp2);
-	bo.playTurn();
+	bo.play();
     }
 }
