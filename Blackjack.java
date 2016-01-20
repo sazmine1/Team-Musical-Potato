@@ -52,7 +52,7 @@ public class Blackjack extends Casino{
 	}
 	if (turn(comp2)){
 	    while(comp2.nums()<17){
-		hit(comp1);
+		hit(comp2);
 	    }
 	    comp1.setStay(true);
 	}
