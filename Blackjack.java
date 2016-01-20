@@ -77,13 +77,13 @@ public class Blackjack extends Casino{
 	else if(a>22&&b>22&&c>22) {
 	    System.out.println("You all busted");
 	    if(a<b&&a<c){
-		System.out.println("You are closest to 21 so you win");
+		System.out.println("You are closest to 21; you win!");
 	    }
 	    else if(b<a&&b<c){
-		System.out.println(comp1.name+" is closest to 21 so he wins");
+		System.out.println(comp1.name+" is closest to 21; he wins!");
 	    }
 	    else{
-		System.out.println(comp2.name+" is closest to 21 so he wins");
+		System.out.println(comp2.name+" is closest to 21; he wins!");
 	    }
 	}
     }
