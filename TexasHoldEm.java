@@ -1,9 +1,13 @@
+import java.util.ArrayList;
 import cs1.Keyboard;
 
 public class TexasHoldEm extends Casino{
+    public ArrayList<Card> community;
+    
     public TexasHoldEm(){
 	super();
 	deal();
+	community = new ArrayList<Card> ();
     }
 
     public void deal() {
@@ -13,28 +17,38 @@ public class TexasHoldEm extends Casino{
 	place=6;
     }
 
-    public void bet() {
+    public void bet(Player a) {
 	System.out.println("Place your bet:");
 	int b = 0;
 	try {
 	    b = Keyboard.readInt();
-	    user.money -= b;
+	    a.money -= b;
 	    pot += b;
-	    if (b > user.money || b < 0 || b < pot) {
+	    if (b > a.money || b < 0 || b < pot) {
 		System.out.println("Be real.");
-		bet();
+		bet(a);
 	    }
 	}
-	catch (Exception e) {
+	catch (Exception E) {
 	    System.out.println("Only cash bets accepted.");
 	}
     }
 
-    public void playTurn() {
+    public void play(){
+	System.out.println(user.name + "'s money:\t" + user.money);
+	System.out.println(comp1.name + "'s money:\t" + comp1.money);
+	System.out.println(comp2.name + "'s money:\t" + comp2.money);
+	System.out.println("Initial betting time");
+	bet(user);
+	System.out.println(user.name + "'s money:\t" + user.money);
+	System.out.println(comp1.name + "'s money:\t" + comp1.money);
+	System.out.println(comp2.name + "'s money:\t" + comp2.money);
+    }
 
     public static void main(String [] args) {
 	TexasHoldEm a = new TexasHoldEm();
-	a.bet();
-	System.out.println(a.user.money);
+	//a.bet();
+	//System.out.println(a.user.money);
+	a.play();
     }
 }
