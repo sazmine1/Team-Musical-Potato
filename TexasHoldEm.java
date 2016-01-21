@@ -2,6 +2,14 @@ import java.util.ArrayList;
 import cs1.Keyboard;
 
 public class TexasHoldEm extends Casino{
+
+    public ArrayList<Card> community;
+
+    public TexasHoldEm(){
+	super();
+	deal();
+	community = new ArrayList<Card>();
+
     public ArrayList<Card> community;
     
     public TexasHoldEm(){
@@ -34,11 +42,15 @@ public class TexasHoldEm extends Casino{
 	}
     }
 
+    public void play() {
     public void play(){
 	System.out.println(user.name + "'s money:\t" + user.money);
 	System.out.println(comp1.name + "'s money:\t" + comp1.money);
 	System.out.println(comp2.name + "'s money:\t" + comp2.money);
 	System.out.println("Initial betting time");
+	bet();
+	System.out.println("Size of pot:\t" + pot);
+       	System.out.println(user.name + "'s money:\t" + user.money);
 	bet(user);
 	System.out.println(user.name + "'s money:\t" + user.money);
 	System.out.println(comp1.name + "'s money:\t" + comp1.money);
