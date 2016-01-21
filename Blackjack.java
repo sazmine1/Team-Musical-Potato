@@ -24,7 +24,7 @@ public class Blackjack extends Casino{
 	place+=1;
     }
     public boolean turn(Player o){
-	return (!(o.nums()>21||user.getStay()));
+	return (!(o.nums()>21||o.getStay()));
     }
     public int maxIndex(int[] a){
 	int ret=0;
@@ -51,10 +51,9 @@ public class Blackjack extends Casino{
 		System.out.println("Hit or Stay(h or s)?");
 		String choice=Keyboard.readString();
 		if (choice.equals("h")){
-		    System.out.println(place);
-		    System.out.println(deck.get(place));
+		    //System.out.println(place);
+		    //System.out.println(deck.get(place));
 		    hit(user);
-		    break;
 		}
 		else if (choice.equals("s")){
 		    user.setStay(true);
@@ -62,6 +61,8 @@ public class Blackjack extends Casino{
 		}
 	    }
 	}
+	System.out.println(turn(comp1));
+	System.out.println(turn(comp2));
 	if (turn(comp1)){
 	    while(comp1.nums()<16){
 		hit(comp1);
@@ -79,7 +80,7 @@ public class Blackjack extends Casino{
 	int c=comp2.nums();
 	System.out.println(user+" Total:"+a);
 	System.out.println(comp1+" Total:"+b);
-        System.out.println(comp2+ "Total:"+ c);
+        System.out.println(comp2+ " Total:"+ c);
 	int[] stuff = new int[3];
 	int[] things = new int[3];
 	if(a<22){
@@ -101,12 +102,14 @@ public class Blackjack extends Casino{
 	    things[3]=c;
 	}
 	int winner;
-	if(max(stuff)>0){
-	    winner=stuff.indexOf(max(stuff));
+	//System.out.println(maxIndex(stuff));
+	if(maxIndex(stuff)>0){
+	    winner=maxIndex(stuff);
 	}
 	else{
-	    winner=things.indexOf(min(stuff));
+	    winner=minIndex(stuff);
 	}
+	//System.out.println(winner);
 	if(winner==0){
 	    System.out.println("You win");
 	}
