@@ -4,11 +4,13 @@ public class Player{
     public String name;
     public ArrayList<Card> hand;
     public boolean stay;
+    public int bet;
     public Player(String name1){
 	name=name1;
 	money=500;
 	hand =new ArrayList<Card>();
 	stay=false;
+	bet = 0;
     }
     public String toString(){
 	return name+"'s  money is $"+money+"\nCards:"+hand;
