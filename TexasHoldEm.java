@@ -9,6 +9,13 @@ public class TexasHoldEm extends Casino{
 	super();
 	deal();
 	community = new ArrayList<Card>();
+
+    public ArrayList<Card> community;
+    
+    public TexasHoldEm(){
+	super();
+	deal();
+	community = new ArrayList<Card> ();
     }
 
     public void deal() {
@@ -18,24 +25,25 @@ public class TexasHoldEm extends Casino{
 	place=6;
     }
 
-    public void bet() {
+    public void bet(Player a) {
 	System.out.println("Place your bet:");
 	int b = 0;
 	try {
 	    b = Keyboard.readInt();
-	    user.money -= b;
+	    a.money -= b;
 	    pot += b;
-	    if (b > user.money || b < 0 || b < pot) {
+	    if (b > a.money || b < 0 || b < pot) {
 		System.out.println("Be real.");
-		bet();
+		bet(a);
 	    }
 	}
-	catch (Exception e) {
+	catch (Exception E) {
 	    System.out.println("Only cash bets accepted.");
 	}
     }
 
     public void play() {
+    public void play(){
 	System.out.println(user.name + "'s money:\t" + user.money);
 	System.out.println(comp1.name + "'s money:\t" + comp1.money);
 	System.out.println(comp2.name + "'s money:\t" + comp2.money);
@@ -43,6 +51,8 @@ public class TexasHoldEm extends Casino{
 	bet();
 	System.out.println("Size of pot:\t" + pot);
        	System.out.println(user.name + "'s money:\t" + user.money);
+	bet(user);
+	System.out.println(user.name + "'s money:\t" + user.money);
 	System.out.println(comp1.name + "'s money:\t" + comp1.money);
 	System.out.println(comp2.name + "'s money:\t" + comp2.money);
     }
