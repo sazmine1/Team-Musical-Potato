@@ -42,19 +42,26 @@ public class TexasHoldEm extends Casino{
 	}
     }
 
+    public void call(Player a, Player b) {
+	a.bet = b.bet;
+    }
+
     public void play() {
     public void play(){
 	System.out.println(user.name + "'s money:\t" + user.money);
 	System.out.println(comp1.name + "'s money:\t" + comp1.money);
 	System.out.println(comp2.name + "'s money:\t" + comp2.money);
 	System.out.println("Initial betting time");
-	bet();
+	bet(user);
 	System.out.println("Size of pot:\t" + pot);
        	System.out.println(user.name + "'s money:\t" + user.money);
-	bet(user);
 	System.out.println(user.name + "'s money:\t" + user.money);
 	System.out.println(comp1.name + "'s money:\t" + comp1.money);
 	System.out.println(comp2.name + "'s money:\t" + comp2.money);
+	if (user.bet <= 100) {
+	    call(comp1, user);
+	    call(comp2, user);
+	}
     }
 
     public static void main(String [] args) {
