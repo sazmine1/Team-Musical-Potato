@@ -26,20 +26,20 @@ public class Blackjack extends Casino{
     public boolean turn(Player o){
 	return (!(o.nums()>21||user.getStay()));
     }
-    public int max(int[] a){
+    public int maxIndex(int[] a){
 	int ret=0;
-	for(int x=0;x<a.length();x++){
-	    if(a[x]>ret){
-		ret=a[x];
+	for(int x=0;x<a.length;x++){
+	    if(a[x]>a[ret]){
+		ret=x;
 	    }
 	}
 	return ret;
     }
-    public int min(int[] a){
+    public int minIndex(int[] a){
 	int ret=0;
-	for(int x=0;x<a.length();x++){
-	    if(a[x]<ret&&a[x]!=0){
-		ret=a[x];
+	for(int x=0;x<a.length;x++){
+	    if(a[x]<a[ret]&&a[x]!=0){
+		ret=x;
 	    }
 	}
 	return ret;
@@ -95,7 +95,7 @@ public class Blackjack extends Casino{
 	    things[1]=b;
 	}
 	if(c<22){
-	    suff[2]=c;
+	    stuff[2]=c;
 	}
 	else{
 	    things[3]=c;
