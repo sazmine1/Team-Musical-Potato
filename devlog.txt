@@ -13,3 +13,15 @@ Added to skeleton for Blackjack class. Decided on using a recursive method. Move
 1/14/16
 Established relationships between Casino, Player, and Card. Decided layout for cards. Figured out how to implement functionality in each
 interconnected class. Working on implementing Keyboard.java into the Blackjack class. Started on the beginnings of the betting system.
+
+1/15/16-1/18/16
+Continued adding functionality to Blackjack and imported cs1 package. Spent time configuring user inputs into what we have 
+already written. Created TexasHoldEm class.
+
+1/19/16
+Wrote out play method of Blackjack and finished class. Minor errors so debugged. Stay method runs on infinite loop, more debugging 
+needed. Added attribute pot to Casino class to keep track of bets.
+
+1/20/16
+Worked on TexasHoldEm class and solidified bet method and its functionality. Tried following flowcharts and noticed minor errors. Spent
+time revising flowchart and ideology to fit with rules of game. 
