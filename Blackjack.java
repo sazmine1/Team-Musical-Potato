@@ -44,6 +44,50 @@ public class Blackjack extends Casino{
 	}
 	return ret;
     }
+    public void bet(){
+	System.out.println("User place your bet from 1 to "+user.money);
+	int betu=0;
+	int bet1=0;
+	int bet2=0;
+	int high=0;
+	while (bet<1||bet>500){
+	    betu = Keyboard.readInt();
+	    high=bet
+	}
+	if(comp1.nums()>18){
+	    if(betu>200){
+		bet1=betu;
+	    }
+	    else{
+		bet1=200;
+	    }
+	}
+	else{
+	    if(betu>300){
+		comp1.fold();
+	    }
+	    else{
+		bet1=betu;
+	    }
+	}
+	if(comp2.nums()>18){
+	    if(betu>200){
+		bet2=betu;
+	    }
+	    else{
+		bet2=200;
+	    }
+	}
+	else{
+	    if(betu>300){
+		comp2.fold();
+	    }
+	    else{
+		bet2=betu;
+	    }
+	}  
+	
+    }
     public void play(){
 	if (turn(user)){
 	    while(!(user.getStay())){
@@ -61,8 +105,8 @@ public class Blackjack extends Casino{
 		}
 	    }
 	}
-	System.out.println(turn(comp1));
-	System.out.println(turn(comp2));
+	//System.out.println(turn(comp1));
+	//System.out.println(turn(comp2));
 	if (turn(comp1)){
 	    while(comp1.nums()<16){
 		hit(comp1);
@@ -99,15 +143,17 @@ public class Blackjack extends Casino{
 	    stuff[2]=c;
 	}
 	else{
-	    things[3]=c;
+	    things[2]=c;
 	}
 	int winner;
 	//System.out.println(maxIndex(stuff));
 	if(maxIndex(stuff)>0){
 	    winner=maxIndex(stuff);
+	    //System.out.println("P");
 	}
 	else{
-	    winner=minIndex(stuff);
+	    winner=minIndex(things);
+	    //System.out.println("O");
 	}
 	//System.out.println(winner);
 	if(winner==0){

@@ -13,7 +13,7 @@ public class Player{
 	bet = 0;
     }
     public String toString(){
-	return name+"'s  money is $"+money+"\nCards:"+hand;
+	return name/*+"'s  money is $"+money*/+"\nCards:"+hand;
     }
     public void deal(Card a,Card b){
 	hand.add(a);
