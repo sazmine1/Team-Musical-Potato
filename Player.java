@@ -5,15 +5,25 @@ public class Player{
     public ArrayList<Card> hand;
     public boolean stay;
     public int bet;
+    public boolean fold;
     public Player(String name1){
 	name=name1;
 	money=500;
 	hand =new ArrayList<Card>();
 	stay=false;
 	bet = 0;
+	fold = false;
     }
     public String toString(){
-	return name/*+"'s  money is $"+money*/+"\nCards:"+hand;
+	return name/*+"'s  money is $"+money*/+"'s Cards:"+hand;
+    }
+    public void bet(int cash){
+	money+=cash;
+    }
+    public void newHand(){
+	for(int x=hand.size()-1;x>-1;x--){
+	    hand.remove(x);
+	}
     }
     public void deal(Card a,Card b){
 	hand.add(a);
@@ -45,5 +55,11 @@ public class Player{
     }
     public void setStay(boolean s){
 	stay=s;
+    }
+    public void fold(boolean b){
+	fold=b;
+    }
+    public boolean getFold(){
+	return fold;
     }
 }
