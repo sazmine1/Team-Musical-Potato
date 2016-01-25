@@ -23,5 +23,12 @@ Wrote out play method of Blackjack and finished class. Minor errors so debugged.
 needed. Added attribute pot to Casino class to keep track of bets.
 
 1/20/16
-Worked on TexasHoldEm class and solidified bet method and its functionality. Tried following flowcharts and noticed minor errors. Spent
-time revising flowchart and ideology to fit with rules of game. 
+Worked on TexasHoldEm class and solidified bet method and its functionality. Tried following flowcharts and noticed minor errors.
+Spent time revising flowchart and ideology to fit with rules of game. 
+
+1/21/16
+Created a pseudo betting system for TexasHoldEm. Reviewed game rules and drew more.
+
+1/22/12-1/24/16
+Finished up functionality of TexasHoldEm. Perfected Blackjack and pushed final version. Trashed TexasHoldEm's old betting system and
+replaced it. Got Keyboard to work in conjunction with what we are doing.
