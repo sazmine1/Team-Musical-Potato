@@ -1,11 +1,12 @@
 To Do List
-1. Work out class hierarchy's minor kinks and details
-2. Work in Scanner class and terminal readings (in the process)
-3. Properly figure out method for one turn of each game in relation to the rules (did for one game)
-4. Debug debug debug
+1. Play on repeat
 
 Have done list
 1. Established relationships between most of the classes
 2. Searched up rules for games we want to do
 3. Figured out the basic UML and Flowchart relations of each method in the games
 4. Wrote Blackjack's methods completely!!! 
+1. Work out class hierarchy's minor kinks and details
+2. Work in Scanner class and terminal readings
+3. Properly figure out method for one turn of each game in relation to the rules
+4. Debug debug debug
