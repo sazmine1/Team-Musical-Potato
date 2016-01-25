@@ -1,5 +1,5 @@
 public class Card {
-    public String suit,number;
+    public String suit,number,p;
     public Card(int suit1, String number1){
 	if (suit1==0){
 	    suit="h";
@@ -15,9 +15,11 @@ public class Card {
 	}
 	if (number1.equals("1")){
 	    number=number1+"0";
+	    p=number1;
 	}
 	else{
 	    number=number1;
+	    p=number1;
 	}
     }
     public String get(){
